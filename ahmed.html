@@ -1,0 +1,1893 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta
+    name="description"
+    content="Mohd Ahmed — Web Developer building clean, fast and practical websites."
+  />
+
+  <meta name="author" content="Mohd Ahmed" />
+
+  <title>Mohd Ahmed | Web Developer</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+
+    /* =========================================================
+       RESET
+    ========================================================= */
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #0c0c0b;
+      color: #f0efe9;
+      font-family: "Manrope", Arial, sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    ::selection {
+      background: #d9ff4f;
+      color: #0c0c0b;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    button,
+    input,
+    textarea {
+      font-family: inherit;
+    }
+
+
+    /* =========================================================
+       SCROLL PROGRESS
+    ========================================================= */
+
+    .progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 3px;
+      background: #d9ff4f;
+      z-index: 9999;
+    }
+
+
+    /* =========================================================
+       HEADER
+    ========================================================= */
+
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+
+      height: 76px;
+
+      padding: 0 6vw;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      background: rgba(12, 12, 11, 0.82);
+      backdrop-filter: blur(16px);
+
+      border-bottom: 1px solid #252523;
+
+      z-index: 100;
+    }
+
+    .logo {
+      text-decoration: none;
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: -1px;
+    }
+
+    .logo span {
+      color: #d9ff4f;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .nav a {
+      color: #aaa;
+      text-decoration: none;
+      font-size: 14px;
+      transition: 0.2s ease;
+    }
+
+    .nav a:hover {
+      color: #fff;
+    }
+
+    .nav-cta {
+      border: 1px solid #444;
+      padding: 10px 15px;
+      border-radius: 99px;
+    }
+
+    .nav-cta:hover {
+      border-color: #d9ff4f;
+      color: #d9ff4f !important;
+    }
+
+    .menu-btn {
+      display: none;
+      border: none;
+      background: transparent;
+      color: white;
+      font-size: 26px;
+      cursor: pointer;
+    }
+
+
+    /* =========================================================
+       GENERAL
+    ========================================================= */
+
+    .section {
+      padding: 120px 8vw;
+    }
+
+    .eyebrow {
+      margin-bottom: 18px;
+
+      color: #92928b;
+
+      font-family: "DM Mono", monospace;
+      font-size: 12px;
+      font-weight: 500;
+
+      letter-spacing: 2px;
+    }
+
+    em {
+      color: #d9ff4f;
+      font-style: normal;
+    }
+
+
+    /* =========================================================
+       HERO
+    ========================================================= */
+
+    .hero {
+      min-height: 100vh;
+
+      padding-top: 180px;
+
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+
+      gap: 7vw;
+
+      align-items: center;
+    }
+
+    .hero h1 {
+      margin-bottom: 30px;
+
+      font-size: clamp(50px, 7vw, 100px);
+      line-height: 0.98;
+
+      letter-spacing: -5px;
+    }
+
+    .hero-text {
+      max-width: 570px;
+
+      color: #aaa;
+
+      font-size: 18px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+
+      margin: 35px 0 22px;
+    }
+
+    .btn {
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
+      padding: 13px 20px;
+
+      border-radius: 5px;
+      border: 1px solid #393937;
+
+      font-size: 14px;
+      font-weight: 600;
+
+      text-decoration: none;
+
+      cursor: pointer;
+
+      transition: 0.2s ease;
+    }
+
+    .btn.primary {
+      background: #d9ff4f;
+      color: #0c0c0b;
+
+      border-color: #d9ff4f;
+    }
+
+    .btn.primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(217, 255, 79, 0.15);
+    }
+
+    .btn.secondary {
+      background: transparent;
+      color: #fff;
+    }
+
+    .btn.secondary:hover {
+      border-color: #d9ff4f;
+      color: #d9ff4f;
+    }
+
+    .status {
+      color: #888;
+
+      font-family: "DM Mono", monospace;
+      font-size: 12px;
+    }
+
+    .status span {
+      display: inline-block;
+
+      width: 7px;
+      height: 7px;
+
+      margin-right: 8px;
+
+      background: #d9ff4f;
+      border-radius: 50%;
+    }
+
+
+    /* =========================================================
+       TERMINAL CARD
+    ========================================================= */
+
+    .hero-card {
+      overflow: hidden;
+
+      background: #111110;
+
+      border: 1px solid #2a2a27;
+      border-radius: 10px;
+
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+    }
+
+    .terminal-top {
+      height: 43px;
+
+      padding: 0 15px;
+
+      display: flex;
+      align-items: center;
+
+      gap: 6px;
+
+      border-bottom: 1px solid #292925;
+    }
+
+    .terminal-top span {
+      width: 8px;
+      height: 8px;
+
+      background: #555;
+
+      border-radius: 50%;
+    }
+
+    .terminal-top small {
+      margin-left: auto;
+
+      color: #666;
+
+      font-family: "DM Mono", monospace;
+      font-size: 11px;
+    }
+
+    .hero-card pre {
+      padding: 30px 28px;
+
+      overflow-x: auto;
+
+      color: #d4d3cb;
+
+      font-family: "DM Mono", monospace;
+      font-size: 14px;
+      line-height: 2;
+    }
+
+    .hero-card i {
+      color: #d9ff4f;
+      font-style: normal;
+    }
+
+    .hero-card b {
+      color: white;
+    }
+
+
+    /* =========================================================
+       SECTION HEAD
+    ========================================================= */
+
+    .section-head {
+      margin-bottom: 50px;
+
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+    }
+
+    .section h2 {
+      font-size: clamp(38px, 5vw, 65px);
+
+      line-height: 1;
+
+      letter-spacing: -3px;
+    }
+
+
+    /* =========================================================
+       FILTERS
+    ========================================================= */
+
+    .filters {
+      display: flex;
+      gap: 8px;
+    }
+
+    .filter {
+      padding: 8px 13px;
+
+      background: transparent;
+
+      color: #777;
+
+      border: 1px solid #292927;
+      border-radius: 99px;
+
+      cursor: pointer;
+
+      transition: 0.2s ease;
+    }
+
+    .filter:hover,
+    .filter.active {
+      color: #d9ff4f;
+      border-color: #d9ff4f;
+    }
+
+
+    /* =========================================================
+       PROJECTS
+    ========================================================= */
+
+    .projects {
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 20px;
+    }
+
+    .project {
+      transition: 0.3s ease;
+    }
+
+    .project.hidden {
+      display: none;
+    }
+
+    .project-visual {
+      height: 390px;
+
+      padding: 25px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      border: 1px solid #2a2a27;
+      border-radius: 7px;
+
+      transition: 0.3s ease;
+    }
+
+    .project:hover .project-visual {
+      transform: translateY(-5px);
+      border-color: #555;
+    }
+
+    .project-visual span,
+    .project-visual small {
+      color: #9b9b93;
+
+      font-family: "DM Mono", monospace;
+      font-size: 11px;
+    }
+
+    .project-visual strong {
+      font-size: 35px;
+      letter-spacing: -2px;
+    }
+
+    .clinic {
+      background:
+        linear-gradient(
+          135deg,
+          #25231f,
+          #151513
+        );
+    }
+
+    .jaggery {
+      background:
+        linear-gradient(
+          135deg,
+          #382b1c,
+          #171411
+        );
+    }
+
+    .portfolio {
+      background:
+        linear-gradient(
+          135deg,
+          #1e2820,
+          #111411
+        );
+    }
+
+    .project-info {
+      padding: 20px 3px;
+
+      display: flex;
+      justify-content: space-between;
+
+      gap: 15px;
+    }
+
+    .project-info h3 {
+      margin-bottom: 7px;
+
+      font-size: 19px;
+    }
+
+    .project-info p {
+      max-width: 350px;
+
+      color: #888;
+
+      font-size: 13px;
+    }
+
+    .project-info > span {
+      padding-top: 4px;
+
+      color: #777;
+
+      font-family: "DM Mono", monospace;
+      font-size: 10px;
+
+      white-space: nowrap;
+    }
+
+
+    /* =========================================================
+       SKILLS
+    ========================================================= */
+
+    .skills {
+      border-top: 1px solid #20201e;
+    }
+
+    .skill-grid {
+      display: grid;
+
+      grid-template-columns: repeat(4, 1fr);
+
+      border-top: 1px solid #292927;
+    }
+
+    .skill {
+      padding: 30px 25px;
+
+      border-right: 1px solid #292927;
+    }
+
+    .skill:last-child {
+      border-right: none;
+    }
+
+    .skill b {
+      color: #d9ff4f;
+
+      font-family: "DM Mono", monospace;
+      font-size: 12px;
+    }
+
+    .skill h3 {
+      margin: 15px 0 8px;
+
+      font-size: 23px;
+    }
+
+    .skill p {
+      color: #888;
+
+      font-size: 14px;
+    }
+
+
+    /* =========================================================
+       ABOUT
+    ========================================================= */
+
+    .about {
+      display: grid;
+
+      grid-template-columns: 0.35fr 1fr;
+
+      gap: 10vw;
+
+      background: #d9ff4f;
+
+      color: #0c0c0b;
+    }
+
+    .about-number {
+      color: rgba(12, 12, 11, 0.35);
+
+      font-family: "DM Mono", monospace;
+      font-size: 80px;
+    }
+
+    .about .eyebrow {
+      color: #3f4a22;
+    }
+
+    .about-copy {
+      max-width: 850px;
+    }
+
+    .about-copy h2 {
+      margin-bottom: 35px;
+
+      font-size: clamp(42px, 6vw, 78px);
+
+      line-height: 1;
+    }
+
+    .about-copy p:not(.eyebrow) {
+      max-width: 720px;
+
+      margin-bottom: 20px;
+
+      font-size: 18px;
+    }
+
+
+    /* =========================================================
+       CONTACT
+    ========================================================= */
+
+    .contact {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 10vw;
+    }
+
+    .contact-copy h2 {
+      margin-bottom: 30px;
+
+      font-size: clamp(48px, 6vw, 85px);
+
+      line-height: 1;
+    }
+
+    .contact-copy > p:not(.eyebrow) {
+      max-width: 500px;
+
+      color: #999;
+    }
+
+    .email-link {
+      display: inline-block;
+
+      margin-top: 25px;
+
+      color: #d9ff4f;
+
+      font-family: "DM Mono", monospace;
+      font-size: 14px;
+
+      text-decoration: none;
+
+      border-bottom: 1px solid #d9ff4f;
+
+      padding-bottom: 4px;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+
+      gap: 18px;
+    }
+
+    .contact-form label {
+      color: #999;
+
+      font-size: 12px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      display: block;
+
+      width: 100%;
+
+      margin-top: 7px;
+
+      padding: 14px;
+
+      background: #111110;
+
+      color: #fff;
+
+      border: 1px solid #30302d;
+      border-radius: 4px;
+
+      outline: none;
+
+      font-size: 14px;
+
+      transition: 0.2s ease;
+    }
+
+    .contact-form textarea {
+      resize: vertical;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: #d9ff4f;
+    }
+
+    .form-note {
+      color: #666;
+
+      font-family: "DM Mono", monospace;
+      font-size: 10px;
+    }
+
+
+    /* =========================================================
+       FOOTER
+    ========================================================= */
+
+    footer {
+      padding: 30px 8vw;
+
+      display: flex;
+      justify-content: space-between;
+
+      color: #666;
+
+      border-top: 1px solid #292927;
+
+      font-family: "DM Mono", monospace;
+      font-size: 11px;
+    }
+
+    footer div {
+      display: flex;
+      gap: 25px;
+    }
+
+    footer a {
+      color: #aaa;
+
+      text-decoration: none;
+    }
+
+
+    /* =========================================================
+       TOAST
+    ========================================================= */
+
+    .toast {
+      position: fixed;
+
+      right: 25px;
+      bottom: 25px;
+
+      padding: 12px 17px;
+
+      background: #d9ff4f;
+
+      color: #0c0c0b;
+
+      border-radius: 5px;
+
+      font-size: 13px;
+
+      transform: translateY(100px);
+
+      transition: 0.3s ease;
+
+      z-index: 999;
+    }
+
+    .toast.show {
+      transform: translateY(0);
+    }
+
+
+    /* =========================================================
+       SCROLL ANIMATION
+    ========================================================= */
+
+    .reveal {
+      opacity: 0;
+
+      transform: translateY(25px);
+
+      transition: 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+
+      transform: translateY(0);
+    }
+
+
+    /* =========================================================
+       MOBILE
+    ========================================================= */
+
+    @media (max-width: 800px) {
+
+      .header {
+        padding: 0 5vw;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      .nav {
+        display: none;
+
+        position: absolute;
+
+        top: 76px;
+        left: 0;
+        right: 0;
+
+        padding: 25px 5vw;
+
+        background: #0c0c0b;
+
+        border-bottom: 1px solid #292927;
+
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav.open {
+        display: flex;
+      }
+
+      .section {
+        padding: 90px 6vw;
+      }
+
+      .hero {
+        padding-top: 140px;
+
+        grid-template-columns: 1fr;
+      }
+
+      .hero-card {
+        display: none;
+      }
+
+      .hero h1 {
+        letter-spacing: -3px;
+      }
+
+      .projects {
+        grid-template-columns: 1fr;
+      }
+
+      .project-visual {
+        height: 300px;
+      }
+
+      .skill-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .skill:nth-child(2) {
+        border-right: none;
+      }
+
+      .skill:nth-child(-n + 2) {
+        border-bottom: 1px solid #292927;
+      }
+
+      .about {
+        grid-template-columns: 1fr;
+      }
+
+      .about-number {
+        display: none;
+      }
+
+      .contact {
+        grid-template-columns: 1fr;
+      }
+
+      .section-head {
+        display: block;
+      }
+
+      .filters {
+        margin-top: 25px;
+      }
+
+      footer {
+        display: block;
+
+        padding: 25px 6vw;
+      }
+
+      footer div {
+        margin-top: 12px;
+
+        flex-wrap: wrap;
+      }
+    }
+
+
+    @media (max-width: 500px) {
+
+      .skill-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .skill {
+        border-right: none !important;
+
+        border-bottom: 1px solid #292927 !important;
+      }
+
+      .skill:last-child {
+        border-bottom: none !important;
+      }
+
+      .hero-text {
+        font-size: 16px;
+      }
+
+      .hero-actions {
+        flex-wrap: wrap;
+      }
+
+      .hero-actions .btn {
+        flex: 1;
+      }
+
+      .project-info {
+        display: block;
+      }
+
+      .project-info > span {
+        display: block;
+
+        margin-top: 10px;
+      }
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+  <!-- =======================================================
+       SCROLL PROGRESS
+  ======================================================== -->
+
+  <div class="progress"></div>
+
+
+  <!-- =======================================================
+       HEADER
+  ======================================================== -->
+
+  <header class="header">
+
+    <a href="#home" class="logo">
+      MA<span>.</span>
+    </a>
+
+    <button
+      class="menu-btn"
+      aria-label="Open navigation"
+      aria-expanded="false"
+    >
+      ☰
+    </button>
+
+    <nav class="nav">
+
+      <a href="#work">Work</a>
+
+      <a href="#skills">Skills</a>
+
+      <a href="#about">About</a>
+
+      <a href="#contact" class="nav-cta">
+        Let's talk ↗
+      </a>
+
+    </nav>
+
+  </header>
+
+
+  <main>
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <section id="home" class="section hero">
+
+      <div class="hero-copy reveal">
+
+        <p class="eyebrow">
+          WEB DEVELOPER / INDIA
+        </p>
+
+        <h1>
+          I build websites that
+          <br>
+          <em>do the job.</em>
+        </h1>
+
+        <p class="hero-text">
+          Clean, fast and practical websites for people and
+          businesses that want to look credible online and
+          actually get results.
+        </p>
+
+        <div class="hero-actions">
+
+          <a
+            href="#work"
+            class="btn primary"
+          >
+            See my work ↓
+          </a>
+
+          <button
+            class="btn secondary"
+            id="copyEmail"
+          >
+            Copy email
+          </button>
+
+        </div>
+
+        <div class="status">
+          <span></span>
+          Available for freelance projects
+        </div>
+
+      </div>
+
+
+      <!-- TERMINAL -->
+
+      <div class="hero-card reveal">
+
+        <div class="terminal-top">
+
+          <span></span>
+          <span></span>
+          <span></span>
+
+          <small>
+            mohd-ahmed.js
+          </small>
+
+        </div>
+
+        <pre><code><b>const</b> developer = {
+  name: <i>"Mohd Ahmed"</i>,
+  role: <i>"Web Developer"</i>,
+  stack: [
+    <i>"HTML"</i>,
+    <i>"CSS"</i>,
+    <i>"JavaScript"</i>,
+    <i>"React"</i>
+  ],
+  focus: <i>"Useful websites"</i>,
+  coffee: <i>true</i>
+};
+
+developer.<b>build</b>();</code></pre>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         WORK
+    ====================================================== -->
+
+    <section id="work" class="section work">
+
+      <div class="section-head reveal">
+
+        <div>
+
+          <p class="eyebrow">
+            SELECTED WORK
+          </p>
+
+          <h2>
+            Things I've built.
+          </h2>
+
+        </div>
+
+
+        <div class="filters">
+
+          <button
+            class="filter active"
+            data-filter="all"
+          >
+            All
+          </button>
+
+          <button
+            class="filter"
+            data-filter="business"
+          >
+            Business
+          </button>
+
+          <button
+            class="filter"
+            data-filter="web"
+          >
+            Web
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <div class="projects">
+
+
+        <!-- PROJECT 1 -->
+
+        <article
+          class="project reveal"
+          data-category="business"
+        >
+
+          <div class="project-visual clinic">
+
+            <span>
+              01 / BUSINESS
+            </span>
+
+            <strong>
+              Dr. Niyaz Ahmed
+            </strong>
+
+            <small>
+              Skin Clinic Website
+            </small>
+
+          </div>
+
+          <div class="project-info">
+
+            <div>
+
+              <h3>
+                Clinic Website
+              </h3>
+
+              <p>
+                Professional service website with responsive
+                design, clear calls-to-action and contact flow.
+              </p>
+
+            </div>
+
+            <span>
+              HTML · CSS · JS
+            </span>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- PROJECT 2 -->
+
+        <article
+          class="project reveal"
+          data-category="business"
+        >
+
+          <div class="project-visual jaggery">
+
+            <span>
+              02 / BUSINESS
+            </span>
+
+            <strong>
+              Jaggery Co.
+            </strong>
+
+            <small>
+              Product Showcase
+            </small>
+
+          </div>
+
+          <div class="project-info">
+
+            <div>
+
+              <h3>
+                Jaggery Business
+              </h3>
+
+              <p>
+                A product-first website concept designed to
+                turn a traditional business into a modern
+                online brand.
+              </p>
+
+            </div>
+
+            <span>
+              WEB · UI
+            </span>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- PROJECT 3 -->
+
+        <article
+          class="project reveal"
+          data-category="web"
+        >
+
+          <div class="project-visual portfolio">
+
+            <span>
+              03 / WEB
+            </span>
+
+            <strong>
+              Personal Portfolio
+            </strong>
+
+            <small>
+              You're looking at it.
+            </small>
+
+          </div>
+
+          <div class="project-info">
+
+            <div>
+
+              <h3>
+                This Portfolio
+              </h3>
+
+              <p>
+                A lightweight portfolio with animations,
+                filtering and a responsive mobile experience.
+              </p>
+
+            </div>
+
+            <span>
+              HTML · CSS · JS
+            </span>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         SKILLS
+    ====================================================== -->
+
+    <section id="skills" class="section skills">
+
+      <div class="section-head reveal">
+
+        <div>
+
+          <p class="eyebrow">
+            TOOLKIT
+          </p>
+
+          <h2>
+            What I work with.
+          </h2>
+
+        </div>
+
+      </div>
+
+
+      <div class="skill-grid reveal">
+
+
+        <div class="skill">
+
+          <b>01</b>
+
+          <h3>
+            Frontend
+          </h3>
+
+          <p>
+            HTML, CSS, JavaScript, responsive layouts,
+            accessibility and polished interactions.
+          </p>
+
+        </div>
+
+
+        <div class="skill">
+
+          <b>02</b>
+
+          <h3>
+            Modern Web
+          </h3>
+
+          <p>
+            React, component-based UI, APIs and practical
+            performance-focused development.
+          </p>
+
+        </div>
+
+
+        <div class="skill">
+
+          <b>03</b>
+
+          <h3>
+            Business Sites
+          </h3>
+
+          <p>
+            Landing pages and websites built around trust,
+            clarity, enquiries and conversion.
+          </p>
+
+        </div>
+
+
+        <div class="skill">
+
+          <b>04</b>
+
+          <h3>
+            Deployment
+          </h3>
+
+          <p>
+            GitHub, GitHub Pages, domains, basic SEO and
+            getting a site from localhost to live.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         ABOUT
+    ====================================================== -->
+
+    <section id="about" class="section about">
+
+      <div class="about-number reveal">
+        04
+      </div>
+
+
+      <div class="about-copy reveal">
+
+        <p class="eyebrow">
+          A LITTLE ABOUT ME
+        </p>
+
+        <h2>
+          Not just another
+          <br>
+          template with my name on it.
+        </h2>
+
+        <p>
+          I'm Mohd Ahmed, a web developer focused on
+          building clean, useful digital experiences.
+          I like taking a vague idea, turning it into a
+          clear interface, and shipping something that
+          people can actually use.
+        </p>
+
+        <p>
+          My approach is simple: understand the goal,
+          keep the design intentional, write maintainable
+          code, and don't add a spinning 3D cube unless
+          somebody has a very good reason.
+        </p>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         CONTACT
+    ====================================================== -->
+
+    <section id="contact" class="section contact">
+
+      <div class="contact-copy reveal">
+
+        <p class="eyebrow">
+          HAVE A PROJECT?
+        </p>
+
+        <h2>
+          Let's make something
+          <br>
+          <em>useful.</em>
+        </h2>
+
+        <p>
+          Tell me what you're building, what you need,
+          and where you're stuck. I'll get back to you
+          by email.
+        </p>
+
+        <!-- CHANGE THIS EMAIL -->
+
+        <a
+          class="email-link"
+          href="mailto:mohdahmed@example.com"
+        >
+          mohdahmed@example.com ↗
+        </a>
+
+      </div>
+
+
+
+      <form
+        class="contact-form reveal"
+        id="contactForm"
+      >
+
+        <label>
+
+          Name
+
+          <input
+            required
+            name="name"
+            placeholder="Your name"
+          >
+
+        </label>
+
+
+        <label>
+
+          Email
+
+          <input
+            required
+            type="email"
+            name="email"
+            placeholder="you@example.com"
+          >
+
+        </label>
+
+
+        <label>
+
+          Project details
+
+          <textarea
+            required
+            name="message"
+            rows="5"
+            placeholder="What are you building?"
+          ></textarea>
+
+        </label>
+
+
+        <button
+          class="btn primary"
+          type="submit"
+        >
+          Open email draft ↗
+        </button>
+
+
+        <p class="form-note">
+          No backend required. This opens your email app
+          with the message prepared.
+        </p>
+
+      </form>
+
+    </section>
+
+  </main>
+
+
+
+  <!-- =======================================================
+       FOOTER
+  ======================================================== -->
+
+  <footer>
+
+    <span>
+      © <span id="year"></span> Mohd Ahmed
+    </span>
+
+    <div>
+
+      <a href="#home">
+        Back to top ↑
+      </a>
+
+      <span>
+        Built with HTML, CSS & JS
+      </span>
+
+    </div>
+
+  </footer>
+
+
+
+  <!-- TOAST -->
+
+  <div
+    class="toast"
+    id="toast"
+  >
+    Email copied.
+  </div>
+
+
+
+  <!-- =======================================================
+       JAVASCRIPT
+  ======================================================== -->
+
+  <script>
+
+    /* =========================================================
+       CONFIGURATION
+    ========================================================= */
+
+    /*
+      CHANGE THIS TO YOUR REAL EMAIL.
+    */
+
+    const email = "mohdahmed@example.com";
+
+
+    /* =========================================================
+       SCROLL PROGRESS
+    ========================================================= */
+
+    const progress =
+      document.querySelector(".progress");
+
+    window.addEventListener("scroll", () => {
+
+      const documentHeight =
+        document.documentElement.scrollHeight;
+
+      const viewportHeight =
+        document.documentElement.clientHeight;
+
+      const scrollTop =
+        document.documentElement.scrollTop;
+
+      const maxScroll =
+        documentHeight - viewportHeight;
+
+      const percentage =
+        (scrollTop / maxScroll) * 100;
+
+      progress.style.width =
+        `${percentage}%`;
+
+    });
+
+
+
+    /* =========================================================
+       MOBILE MENU
+    ========================================================= */
+
+    const menuBtn =
+      document.querySelector(".menu-btn");
+
+    const nav =
+      document.querySelector(".nav");
+
+
+    menuBtn.addEventListener("click", () => {
+
+      const isOpen =
+        nav.classList.toggle("open");
+
+      menuBtn.setAttribute(
+        "aria-expanded",
+        isOpen
+      );
+
+      menuBtn.textContent =
+        isOpen ? "×" : "☰";
+
+    });
+
+
+    /*
+      Close mobile menu when
+      clicking a navigation link.
+    */
+
+    document
+      .querySelectorAll(".nav a")
+      .forEach(link => {
+
+        link.addEventListener("click", () => {
+
+          nav.classList.remove("open");
+
+          menuBtn.textContent = "☰";
+
+          menuBtn.setAttribute(
+            "aria-expanded",
+            "false"
+          );
+
+        });
+
+      });
+
+
+
+    /* =========================================================
+       PROJECT FILTER
+    ========================================================= */
+
+    const filterButtons =
+      document.querySelectorAll(".filter");
+
+    const projects =
+      document.querySelectorAll(".project");
+
+
+    filterButtons.forEach(button => {
+
+      button.addEventListener("click", () => {
+
+        /*
+          Remove active state
+          from all buttons.
+        */
+
+        filterButtons.forEach(btn => {
+
+          btn.classList.remove("active");
+
+        });
+
+
+        /*
+          Activate clicked button.
+        */
+
+        button.classList.add("active");
+
+
+        const filter =
+          button.dataset.filter;
+
+
+        /*
+          Show/hide projects.
+        */
+
+        projects.forEach(project => {
+
+          if (
+            filter === "all" ||
+            project.dataset.category === filter
+          ) {
+
+            project.classList.remove("hidden");
+
+          } else {
+
+            project.classList.add("hidden");
+
+          }
+
+        });
+
+      });
+
+    });
+
+
+
+    /* =========================================================
+       COPY EMAIL
+    ========================================================= */
+
+    const copyEmailButton =
+      document.getElementById("copyEmail");
+
+    const toast =
+      document.getElementById("toast");
+
+
+    copyEmailButton.addEventListener(
+      "click",
+      async () => {
+
+        try {
+
+          await navigator.clipboard.writeText(email);
+
+          toast.textContent =
+            "Email copied.";
+
+          toast.classList.add("show");
+
+          setTimeout(() => {
+
+            toast.classList.remove("show");
+
+          }, 1800);
+
+        } catch (error) {
+
+          toast.textContent =
+            email;
+
+          toast.classList.add("show");
+
+          setTimeout(() => {
+
+            toast.classList.remove("show");
+
+          }, 2500);
+
+        }
+
+      }
+    );
+
+
+
+    /* =========================================================
+       CONTACT FORM
+    ========================================================= */
+
+    const contactForm =
+      document.getElementById("contactForm");
+
+
+    contactForm.addEventListener(
+      "submit",
+      (event) => {
+
+        event.preventDefault();
+
+
+        const formData =
+          new FormData(contactForm);
+
+
+        const name =
+          formData.get("name");
+
+        const visitorEmail =
+          formData.get("email");
+
+        const message =
+          formData.get("message");
+
+
+        /*
+          Prepare email subject.
+        */
+
+        const subject =
+          encodeURIComponent(
+            `Website project enquiry from ${name}`
+          );
+
+
+        /*
+          Prepare email body.
+        */
+
+        const body =
+          encodeURIComponent(
+`Name: ${name}
+
+Email: ${visitorEmail}
+
+Project details:
+${message}`
+          );
+
+
+        /*
+          Open user's email application.
+        */
+
+        window.location.href =
+          `mailto:${email}?subject=${subject}&body=${body}`;
+
+      }
+    );
+
+
+
+    /* =========================================================
+       CURRENT YEAR
+    ========================================================= */
+
+    document.getElementById("year")
+      .textContent =
+      new Date().getFullYear();
+
+
+
+    /* =========================================================
+       SCROLL REVEAL ANIMATION
+    ========================================================= */
+
+    const observer =
+      new IntersectionObserver(
+        entries => {
+
+          entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+              entry.target
+                .classList
+                .add("visible");
+
+              observer.unobserve(
+                entry.target
+              );
+
+            }
+
+          });
+
+        },
+        {
+          threshold: 0.12
+        }
+      );
+
+
+    document
+      .querySelectorAll(".reveal")
+      .forEach(element => {
+
+        observer.observe(element);
+
+      });
+
+  </script>
+
+</body>
+</html>
+```
